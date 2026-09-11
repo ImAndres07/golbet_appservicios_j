@@ -37,9 +37,13 @@
 
                         </li>
 
-                    </ul>
+                        <li class="nav-item">
 
-                    <!-- Aquí irá el enlace a Partidos (Módulo 3) y la sesión (Módulo 7) -->
+                            <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
+
+                        </li>
+
+                    </ul>
 
                 </div>
 
@@ -47,24 +51,32 @@
 
         </nav>
     </header>
+
     <div class="container">
+
         <main role="main" class="pb-3">
+
             @RenderBody()
+
         </main>
+
     </div>
 
     <footer class="border-top footer text-muted">
 
         <div class="container">
 
-            &copy; @DateTime.Now.Year - GolBet · Simulador académico 
+            &copy; @DateTime.Now.Year - GolBet · Simulador académico
 
         </div>
 
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

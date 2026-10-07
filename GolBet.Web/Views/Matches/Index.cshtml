@@ -46,7 +46,16 @@
 
 </div>
 
-<h2 class="mb-4">⚽ Cartelera de partidos</h2>
+<!-- Matches/Index.cshtml: envolver el h2 en un d-flex (como en Teams) y agregar 
+(En otras palabras, es reemplazar el h2 por el siguiente bloque de cod--> 
+
+<div class="d-flex justify-content-between align-items-center mb-4"> 
+
+    <h2>⚽ Cartelera de partidos</h2> 
+
+    <a asp-action="Create" class="btn btn-success">+ Nuevo partido</a> 
+
+</div> 
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
 

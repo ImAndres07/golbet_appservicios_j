@@ -16,8 +16,8 @@ public class Bet : AuditableEntity
     public int MatchId { get; set; }
     public Match Match { get; set; } = null!;
 
-
-
-    // Module 7 will add:  public string UserId  +  AppUser User 
+    // GolBet.Entities/Bet.cs  (agregar) 
+    public string UserId { get; set; } = null!;   // FK -> AspNetUsers (string PK) 
+    public AppUser User { get; set; } = null!;    // navigation property 
 
 }

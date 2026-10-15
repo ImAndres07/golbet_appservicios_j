@@ -44,14 +44,21 @@
                         </li>
 
                         <!-- _Layout.cshtml, dentro del ul del navbar --> 
+                        @if (User.IsInRole("Admin"))
 
-                                            <li class="nav-item"> 
+                        {
 
-                                                <a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a> 
+                            <li class="nav-item">
 
-                                            </li> 
+                                <a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a>
+
+                            </li>
+
+                        }
 
                     </ul>
+
+                    <partial name="_LoginPartial" />
 
                 </div>
 

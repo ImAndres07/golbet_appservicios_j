@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace GolBet.Repositories.Interfaces;
 public interface IMatchRepository : IGenericRepository<Match>
 {
-    Task<IEnumerable<Match>> GetAllWithTeamsAsync(MatchStatus? status = null);
+    Task<IEnumerable<Match>> GetAllWithTeamsAsync(MatchStatus? status = null, string? search = null);
     Task<Match?> GetByIdWithDetailsAsync(int id);
 } 
 

@@ -5,7 +5,7 @@
 
 @{
     ViewData["Title"] = "Partidos";
-    var current = (MatchStatus?)ViewBag.CurrentStatus;
+    var current = (MatchStatus?)ViewBag.CurrentStatus; //
     var currentSearch = (string?)ViewBag.CurrentSearch;
 }
 
@@ -25,7 +25,7 @@
 
     @if (current.HasValue)
     {
-        <input type="hidden" name="status" value="@current" />
+        <input type="hidden" name="status" value="@current" />             //
     }
 
     <input type="text"
@@ -36,14 +36,14 @@
 
     <button type="submit" class="btn btn-success">Buscar</button>
 
-</form>
+</form>                    
 
-@* Status filters: each one keeps the active search *@
+@* Status filters: each one keeps the active search *@             
 <div class="d-flex gap-2 flex-wrap mb-4">
 
     <a asp-action="Index"
        asp-route-search="@currentSearch"
-       class="btn btn-sm @(current is null ? "btn-success" : "btn-outline-success")">
+       class="btn btn-sm @(current is null ? "btn-success" : "btn-outline-success")">            
         Todos
     </a>
 
@@ -70,7 +70,7 @@
 
 </div>
 
-@if (!Model.Any())
+@if (!Model.Any()) //
 {
     @* No results *@
     <div class="text-center py-5">

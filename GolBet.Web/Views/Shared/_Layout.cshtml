@@ -43,17 +43,20 @@
 
                         </li>
 
-                        <!-- _Layout.cshtml, dentro del ul del navbar --> 
-                        @if (User.IsInRole("Admin"))
-
+                        @if (User.IsInRole("Apostador"))
                         {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Bets" asp-action="MyBets">Mis apuestas</a>
+                            </li>
+                        }
 
+                        @if (User.IsInRole("Admin"))
+                        {
                             <li class="nav-item">
 
                                 <a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a>
 
                             </li>
-
                         }
 
                     </ul>
@@ -71,19 +74,21 @@
 
         <main role="main" class="pb-3">
 
-            @if (TempData["Success"] is string message) 
+            @if (TempData["Success"] is string message)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+                    ✅ @message
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
 
-{ 
-
-    <div class="alert alert-success alert-dismissible fade show"> 
-
-        ✅ @message 
-
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
-
-    </div> 
-
-}
+            @if (TempData["Error"] is string errorMessage)
+            {
+                <div class="alert alert-danger alert-dismissible fade show">
+                    ⚠️ @errorMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
 
             @RenderBody()
 
